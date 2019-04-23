@@ -69,8 +69,9 @@
         }
 
         // コピー処理(選択してクリップボードにコピーする)
-        resText.select();
-        document.execCommand("copy");
+        resText.focus();
+        document.execCommand("selectAll");
+        document.execCommand("copy");  
         hasResult = true;
     }
 
@@ -85,7 +86,8 @@
      * 再コピーボタンを押したときの処理
      */
     reCopyBtn.onclick = (event) => {
-        resText.select();
+        resText.focus();
+        document.execCommand("selectAll");
         document.execCommand("copy");        
     }
 
