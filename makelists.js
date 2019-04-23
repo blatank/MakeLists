@@ -5,6 +5,7 @@
     const ulBtn = document.getElementById('ulBtn');
     const olBtn = document.getElementById('olBtn');
     const clrBtn = document.getElementById('clrBtn');
+    const reCopyBtn = document.getElementById('reCopy');
     let hasResult = false;
     let resText;
     let resHead;
@@ -78,6 +79,14 @@
      */
     clrBtn.onclick = (event) => {
         text.value = "";
+    }
+
+    /**
+     * 再コピーボタンを押したときの処理
+     */
+    reCopyBtn.onclick = (event) => {
+        resText.select();
+        document.execCommand("copy");        
     }
 
 })();
