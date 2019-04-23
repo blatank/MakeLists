@@ -69,9 +69,7 @@
         }
 
         // コピー処理(選択してクリップボードにコピーする)
-        resText.focus();
-        document.execCommand("selectAll");
-        document.execCommand("copy");  
+        doCopy();
         hasResult = true;
     }
 
@@ -86,9 +84,15 @@
      * 再コピーボタンを押したときの処理
      */
     reCopyBtn.onclick = (event) => {
+        doCopy();      
+    }
+
+    function doCopy() {
+        // スマホでうまく出来ないのでいったんフォーカス移す
         resText.focus();
-        document.execCommand("selectAll");
-        document.execCommand("copy");        
+        
+        resText.select();
+        document.execCommand("copy"); 
     }
 
 })();
