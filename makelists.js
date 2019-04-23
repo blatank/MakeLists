@@ -90,9 +90,11 @@
     function doCopy() {
         // スマホでうまく出来ないのでいったんフォーカス移す
         resText.focus();
-        
-        resText.select();
+        document.execCommand("selectAll"); 
         document.execCommand("copy"); 
+
+        // 他にフォーカスを移す
+        alert("コピーしました");
     }
 
 })();
