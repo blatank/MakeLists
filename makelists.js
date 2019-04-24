@@ -5,10 +5,7 @@
     const ulBtn = document.getElementById('ulBtn');
     const olBtn = document.getElementById('olBtn');
     const clrBtn = document.getElementById('clrBtn');
-    const reCopyBtn = document.getElementById('reCopy');
-    let hasResult = false;
     let resText;
-    let resHead;
 
     /**
      * 「番号無しリストを生成」ボタンをクリックしたときの処理
@@ -41,6 +38,9 @@
 
         // テキストを改行単位で分割
         const strs = str.split('\n');
+        
+        // ダミー挿入位置
+        const top = document.getElementById('top');
 
         // 各行タグ化
         let lists = `<${tag}>\n`;
@@ -49,28 +49,28 @@
         }
         lists += `</${tag}>\n`;
 
-        // 1度だけ
-        if (hasResult === false) {
-            // ヘッダ
-            resHead = document.createElement('h2');
-            resHead.innerText = '以下をコピーしました';
-
-            // コピー用のテキストエリアを作成しそこにテキストをセット
-            resText = document.createElement('textarea');
-        }
+        // コピー用のテキストエリアを作成
+        resText = document.createElement('textarea');
 
         // コピーするリストをtextareaにセット
         resText.value = lists;
 
-        // 初回のみ
-        if (hasResult === false) {
-            document.getElementById('result').appendChild(resHead);
-            document.getElementById('result').appendChild(resText);
-        }
+        // textareaを表示
+        top.appendChild(resText);
 
         // コピー処理(選択してクリップボードにコピーする)
-        doCopy();
-        hasResult = true;
+        resText.focus();
+        document.execCommand('selectAll');
+        document.execCommand('copy');
+        resText.blur();
+        
+        // textareaを消す
+        top.removeChild(resText);
+
+        // 半分くらいデバッグ用
+        if (document.getElementById('confirm').checked) {
+            alert("コピー完了しました");
+        }
     }
 
     /**
@@ -79,22 +79,4 @@
     clrBtn.onclick = (event) => {
         text.value = "";
     }
-
-    /**
-     * 再コピーボタンを押したときの処理
-     */
-    reCopyBtn.onclick = (event) => {
-        doCopy();      
-    }
-
-    function doCopy() {
-        // スマホでうまく出来ないのでいったんフォーカス移す
-        resText.focus();
-        document.execCommand("selectAll"); 
-        document.execCommand("copy"); 
-
-        // 他にフォーカスを移す
-        alert("コピーしました");
-    }
-
 })();
