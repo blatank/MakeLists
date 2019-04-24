@@ -4,6 +4,9 @@
     const text = document.getElementById('text');
     const ulBtn = document.getElementById('ulBtn');
     const olBtn = document.getElementById('olBtn');
+    
+    // 初期値
+    text.value = "え\nる\nし\nっ\nて\nい\nる\nか";
 
     ulBtn.onclick = (event) => {
         // テキストを取得する
