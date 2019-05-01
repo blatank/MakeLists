@@ -1,8 +1,14 @@
 textarea {
     width: 500px;
     height: 200px;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 
 h2 {
     color: red;
+}
+
+#ulBtn, #olBtn, #clrBtn {
+    margin: 5px 5px;
 }
