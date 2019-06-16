@@ -35,3 +35,7 @@ header h1 {
     font-family: Verdana, sans-serif;
     text-align: center;
 }
+
+#btnArea {
+    margin-top: 15px;
+}
