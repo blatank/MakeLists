@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style.css">
-    <script src="./makelists.js" async></script>
-    <title>りすとめーかー</title>
+  <script src="https://kit.fontawesome.com/70c8608464.js"></script>
+  <script src="./makelists.js" async></script>
+  <title>りすとめーかー</title>
 </head>
-<body>
+<body style="background: #f8f8f8; margin: 0;">
+  <header>
+    <div class="container">
+      <i id="open_menu" class="fas fa-bars"></i>
+      <h1>りすとめーかー</h1>
+  	</div>
+  </header>
+  <section class="itemarea">
+    <div class="container">
+			<section class="feature">
+				<p>入力されたアイテムをHTMLのタグ付けします。</p>
+			</section>
+      <section id="top"></section>
 
-    <div class="w-75 mx-auto">
-        <h1 class="bg-primary display-6 text-center">りすとめーかー</h1>
-
-        <p class="text-center">下のテキストボックスにテキストを入力し、「番号無しリストを生成」あるいは「番号付きリストを生成」をクリックすると、各行をリスト化したHTMLコードを出力します。</p>
-        <div id="top"></div>
-        <div id="txtArea">
-            <textarea class="form-control mx-auto" name="" id="text" rows="10"></textarea>
-        </div>
-
-        <div id="btnArea" class="g-secondary w-50 mx-auto">
-            <button type="button" class="btn btn-primary" id="ulBtn">番号無しリストを生成</button>
-            <button type="button" class="btn btn-primary" id="olBtn">番号付きリストを生成</button>
-            <button type="button" class="btn btn-secondary" id="clrBtn">テキストクリア</button><br>
-            <input type="checkbox" id="confirm">
-            <label for="confirm">コピー後に確認</label>
-        </div>
-    </div>
+      <section id="txtArea">
+        <textarea class="form-control mx-auto" name="" id="text" rows="10"></textarea>
+			</section>
+			<section id="btnArea" class="g-secondary w-50 mx-auto">
+					<button type="button" class="btn btn-primary" id="ulBtn">ul</button>
+					<button type="button" class="btn btn-primary" id="olBtn">ol</button>
+					<button type="button" class="btn btn-secondary" id="clrBtn">クリア</button><br>
+					<input type="checkbox" id="confirm">
+					<label for="confirm">コピー後に確認</label>
+      </section>
+		</div>
+  </section>
 </body>
 </html>
