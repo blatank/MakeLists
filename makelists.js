@@ -45,7 +45,10 @@
         // 各行タグ化
         let lists = `<${tag}>\n`;
         for (let i = 0; i < strs.length; i++) {
-            lists += '  <li>' + strs[i] + "</li>\n";
+        	// 空行は無視
+        	if (strs[i].length > 0) { 
+                lists += '  <li>' + strs[i] + "</li>\n";
+            }
         }
         lists += `</${tag}>\n`;
 
