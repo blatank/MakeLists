@@ -1,0 +1,41 @@
+#open_menu {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+textarea {
+//    width: 500px;
+//    height: 200px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+#ulBtn, #olBtn, #clrBtn {
+    margin: 5px 5px;
+    font-size: 8pt;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+header h1 {
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0.67em 0;
+}
+
+.itemarea {
+    background: #fff;
+    padding: 30px 0;
+    font-size: 14px;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+}
+
+#btnArea {
+    margin-top: 15px;
+}
