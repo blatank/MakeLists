@@ -4,14 +4,8 @@
     const text = document.getElementById('text');
     const ulBtn = document.getElementById('ulBtn');
     const olBtn = document.getElementById('olBtn');
-<<<<<<< HEAD
-    
-    // 初期値
-    text.value = "え\nる\nし\nっ\nて\nい\nる\nか";
-=======
     const clrBtn = document.getElementById('clrBtn');
     let resText;
->>>>>>> 265a2a4ac485e3cb363a3cf6b0f761cd6cdd4c75
 
     /**
      * 「番号無しリストを生成」ボタンをクリックしたときの処理
