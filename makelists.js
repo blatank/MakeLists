@@ -42,12 +42,22 @@
         // ダミー挿入位置
         const top = document.getElementById('top');
 
+        // 目次生成用のアンカー出力する
+        const makeAnker = document.getElementById('anker').checked;
+
         // 各行タグ化
         let lists = `<${tag}>\n`;
         for (let i = 0; i < strs.length; i++) {
         	// 空行は無視
         	if (strs[i].length > 0) { 
-                lists += '  <li>' + strs[i] + "</li>\n";
+
+                // 目次生成用のアンカー出力する場合
+                if (makeAnker) {
+                    lists += `    <li><a href=\"\#${strs[i]}\">${strs[i]}</a></li>\n`
+                }
+                else {
+                    lists += `    <li>${strs[i]}</li>\n`;
+                }
             }
         }
         lists += `</${tag}>\n`;
