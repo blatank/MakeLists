@@ -45,6 +45,18 @@
         // 目次生成用のアンカー出力する
         const makeAnker = document.getElementById('anker').checked;
 
+		// <a name="">用
+        let names = "";
+        let h_size;
+
+        if (makeAnker) {
+			h_size = document.getElementById('h_size').value;
+            if (!isNaN(h_size)) {
+                // 数字じゃなかったらh2ということにする
+                h_size = 2;
+            }
+		}
+
         // 各行タグ化
         let lists = `<${tag}>\n`;
         for (let i = 0; i < strs.length; i++) {
@@ -53,7 +65,8 @@
 
                 // 目次生成用のアンカー出力する場合
                 if (makeAnker) {
-                    lists += `    <li><a href=\"\#${strs[i]}\">${strs[i]}</a></li>\n`
+                    lists += `    <li><a href=\"\#${strs[i]}\">${strs[i]}</a></li>\n`;
+	                names += `<h${h_size}><a name=\"${strs[i]}\">${strs[i]}</a></h${h_size}>\n`; 
                 }
                 else {
                     lists += `    <li>${strs[i]}</li>\n`;
@@ -61,6 +74,11 @@
             }
         }
         lists += `</${tag}>\n`;
+
+        if (makeAnker) {
+        	lists += `\n\n${names}`;
+        }
+
 
         // コピー用のテキストエリアを作成
         resText = document.createElement('textarea');
