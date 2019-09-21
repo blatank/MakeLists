@@ -50,8 +50,12 @@
         let h_size;
 
         if (makeAnker) {
-			h_size = document.getElementById('h_size').value;
-            if (!isNaN(h_size)) {
+			let tmp = document.getElementById('h_size').value;
+            if (!isNaN(tmp)) {
+                // 数字に変換する
+                h_size = Number(tmp);
+            }
+            else {
                 // 数字じゃなかったらh2ということにする
                 h_size = 2;
             }
