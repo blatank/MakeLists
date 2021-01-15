@@ -39,3 +39,12 @@ header h1 {
 #btnArea {
     margin-top: 15px;
 }
+
+#h_size,
+#tabs {
+    width: 2em;
+}
+
+#ankerLabel {
+    width: 30em;
+}

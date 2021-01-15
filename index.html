@@ -31,9 +31,14 @@
 			<section id="btnArea" class="g-secondary w-50 mx-auto">
 					<button type="button" class="btn btn-primary" id="ulBtn">ul</button>
 					<button type="button" class="btn btn-primary" id="olBtn">ol</button>
-					<button type="button" class="btn btn-secondary" id="clrBtn">クリア</button><br>
-					<input type="checkbox" id="confirm"><label for="confirm">コピー後に確認</label><br>
-          <label for="tabs">タブ数：<input type="text" id="tabs" value="2" maxlength="1" size="10"/></label>
+          <button type="button" class="btn btn-secondary" id="clrBtn">クリア</button><br/>
+      </section>
+      <section id="option" class="text-left mt-4 w-50 mx-auto">
+					<input type="checkbox" id="confirm"><label for="confirm">コピー後に確認</label><br/>
+          <input type="checkbox" id="anker"><label for="anker">ページ内用のリンク貼る</label><br>
+          <label for="h_size"></label>リンク先の見出し：h<input type="text" id="h_size" value="3" maxlength="1"></label><br/>
+          <label for="ankerLabel">ラベル名：<input type="text" id="ankerLabel" placeholder="ラベル名をアルファベットで入力してください"></label><br/>
+          <label for="tabs">インデント数(半角スペース数)：<input type="text" id="tabs" value="2" maxlength="1" size="10"/></label>
       </section>
 		</div>
   </section>

@@ -8,6 +8,8 @@ $(function() {
   const $clrBtn = $('#clrBtn');
   const $confirmBtn = $('#confirm');
   const $tabsEdit = $('#tabs');
+  const $anker = $('#anker');
+  const $ankerLabel = $('#ankerLabel');
   let resText;
 
   /**
@@ -53,15 +55,40 @@ $(function() {
       tabs += ' ';
     }
 
+    // アンカー作成準備
+    let h_size = 3;
+    let makeAnker = $anker.prop("checked");
+
+    if (makeAnker) {
+      // ヘッダタグ(h?)設定取得
+			let tmp = $('#h_size').val();
+      if (!isNaN(tmp)) {
+        // 数字に変換する
+        h_size = Number(tmp);
+      }
+    }
+    
     // 各行タグ化
     let lists = `<${tag}>\n`;
+    let headers = "";
     for (let i = 0; i < strs.length; i++) {
-    	// 空行は無視
+      let ankerBefore = "";
+      let ankerAfter = "";
+
+      // アンカー作成
+      if (makeAnker) {
+        let label = $ankerLabel.val();
+        ankerBefore = `<a href="#${label}${i}">`;
+        ankerAfter = "</a>";
+        headers += `<h${h_size} id="${label}${i}">${strs[i]}</h${h_size}>\n`;
+      }
+
+      // 空行は無視
     	if (strs[i].length > 0) { 
-            lists += `${tabs}<li>${strs[i]}</li>\n`;
+            lists += `${tabs}<li>${ankerBefore}${strs[i]}${ankerAfter}</li>\n`;
         }
     }
-    lists += `</${tag}>\n`;
+    lists += `</${tag}>\n${headers}`;
 
     // コピー用のテキストエリアを作成
     // コピーするリストをtextareaにセット
