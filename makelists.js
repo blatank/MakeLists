@@ -1,5 +1,6 @@
 $(function() {
   'use strict';
+  
   // element
   const $itemArea = $('.itemarea');
   const $text = $('#text');
