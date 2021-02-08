@@ -76,19 +76,20 @@ $(function() {
       let ankerBefore = "";
       let ankerAfter = "";
 
-      // アンカー作成
-      if (makeAnker) {
-        let label = $ankerLabel.val();
-        ankerBefore = `<a href="#${label}${i}">`;
-        ankerAfter = "</a>";
-        headers += `<h${h_size} id="${label}${i}">${strs[i]}</h${h_size}>\n`;
-      }
-
       // 空行は無視
-    	if (strs[i].length > 0) { 
-            lists += `${tabs}<li>${ankerBefore}${strs[i]}${ankerAfter}</li>\n`;
+      if (strs[i].length > 0) { 
+        // アンカー作成
+        if (makeAnker) {
+          let label = $ankerLabel.val();
+          ankerBefore = `<a href="#${label}${i}">`;
+          ankerAfter = "</a>";
+          headers += `<h${h_size} id="${label}${i}">${strs[i]}</h${h_size}>\n`;
         }
+        // リスト作成
+        lists += `${tabs}<li>${ankerBefore}${strs[i]}${ankerAfter}</li>\n`;
+      }
     }
+    // 貼り付ける文字列を作成
     lists += `</${tag}>\n${headers}`;
 
     // コピー用のテキストエリアを作成
