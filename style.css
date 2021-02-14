@@ -20,10 +20,10 @@ header h1 {
 }
 
 /*** list area ***/
-textarea {
+/* textarea {
     margin-top: 25px;
     margin-bottom: 20px;
-}
+} */
 
 /*** item area ***/
 .itemarea {
@@ -39,32 +39,22 @@ textarea {
     margin: 0 auto;
 }
 
-/*** button area ***/
-#ulBtn, #olBtn, #clrBtn {
-    margin: 5px 5px;
-    font-size: 8pt;
-}
-
-#btnArea {
-    margin-top: 15px;
-}
-
-/*** option area ***/
-#option ul li {
-    list-style-type: none;
-}
-
-#h_size,
-#tabs {
-    width: 2em;
-}
-
-#ankerLabel {
-    width: 30em;
-}
 
 /*** footer ***/
 footer p {
     text-align: center;
     color: gray;
+}
+
+footer ul {
+    text-align: center;
+}
+
+footer ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+footer ul li:not(:first-child) {
+    margin-left: 25px;
 }
